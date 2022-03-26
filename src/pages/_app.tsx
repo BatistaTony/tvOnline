@@ -1,16 +1,15 @@
-import App from "next/app";
+/* eslint-disable require-jsdoc */
+import App from 'next/app'
 
 class MyApp extends App {
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps } = this.props
     return (
       <>
-      
-          <Component {...pageProps} />
-       
+        <Component {...pageProps} />
       </>
-    );
+    )
   }
 }
 
-export default MyApp;
+export default MyApp
