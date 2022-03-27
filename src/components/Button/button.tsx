@@ -1,3 +1,5 @@
+import { ButtonContainer } from './button.styles'
+
 export const Button = () => {
-  return <button>example</button>
+  return <ButtonContainer>example</ButtonContainer>
 }
