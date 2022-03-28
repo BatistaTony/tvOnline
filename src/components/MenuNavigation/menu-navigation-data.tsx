@@ -1,4 +1,4 @@
-import SportIcon from './../../assets/icons/box.svg'
+import Home from './../../assets/icons/home.svg'
 
 interface NavigationsType {
   title: string
@@ -8,11 +8,11 @@ interface NavigationsType {
 const menuNavigations: NavigationsType[] = [
   {
     title: 'Sports',
-    icon: <SportIcon />
+    icon: <Home />
   },
   {
     title: 'Movies',
-    icon: <SportIcon />
+    icon: <Home />
   }
 ]
 

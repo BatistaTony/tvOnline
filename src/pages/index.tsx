@@ -1,12 +1,22 @@
+import { GlobalContext } from 'context/gloabl.context'
 import { CustomLayout } from 'Layout/layout'
+import { useContext } from 'react'
+
+const pages = [
+  {
+    title: 'sports',
+    content: <h1>Sports page</h1>
+  },
+  {
+    title: 'movies',
+    content: <h1>movies page</h1>
+  }
+]
 
 const Page = () => {
-  return (
-    <CustomLayout>
-      <div>this is the menu part</div>
-      <div>this is the content part</div>
-    </CustomLayout>
-  )
+  const { currentPage } = useContext(GlobalContext)
+
+  return <CustomLayout></CustomLayout>
 }
 
 export default Page
