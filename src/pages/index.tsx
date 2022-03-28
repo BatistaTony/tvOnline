@@ -16,7 +16,17 @@ const pages = [
 const Page = () => {
   const { currentPage } = useContext(GlobalContext)
 
-  return <CustomLayout></CustomLayout>
+  const showCurrentPage = (): React.ReactNode => {
+    const page = pages.find(page => page.title === currentPage)
+
+    if (page) {
+      return page.content
+    } else {
+      return <h1>404 no found</h1>
+    }
+  }
+
+  return <CustomLayout>{showCurrentPage()}</CustomLayout>
 }
 
 export default Page

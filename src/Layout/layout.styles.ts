@@ -12,5 +12,5 @@ export const LayoutContainer = styled.div`
 export const LayoutContent = styled.div`
   width: 100%;
   height: 100%;
-  background-color: yellow;
+  background-color: ${props => props.theme.colors.menu.bg};
 `

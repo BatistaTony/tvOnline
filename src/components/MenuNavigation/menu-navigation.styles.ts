@@ -64,6 +64,8 @@ export const MenuItem = styled.li<MenuItemProps>`
   transition: 0.5s;
   cursor: pointer;
   font-size: 0.8rem;
+  border-right: 4px solid
+    ${props => (props.isActive ? props.theme.colors.orange : 'transparent')};
 
   &:hover {
     background-color: ${props => props.theme.colors.menu.item.activeBg};

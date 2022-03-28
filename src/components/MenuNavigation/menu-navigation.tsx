@@ -7,13 +7,14 @@ import {
   MenuTitle
 } from './menu-navigation.styles'
 import { menuNavigations, NavigationsType } from './menu-navigation-data'
-import { useState } from 'react'
+import { useContext } from 'react'
+import { GlobalContext } from 'context/gloabl.context'
 
 const MenuNavigation = () => {
-  const [activeItem, setActiveItem] = useState<string>('Sports')
+  const { setCurrentPageRoute, currentPage } = useContext(GlobalContext)
 
   const navigateTo = (route: string) => {
-    setActiveItem(route)
+    setCurrentPageRoute(route.toLowerCase())
   }
 
   return (
@@ -26,7 +27,7 @@ const MenuNavigation = () => {
         {menuNavigations.map((item: NavigationsType) => (
           <MenuItem
             onClick={() => navigateTo(item.title)}
-            isActive={activeItem === item.title}
+            isActive={currentPage === item.title.toLowerCase()}
             key={item.title}
           >
             {item.icon} {item.title}

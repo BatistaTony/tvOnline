@@ -2,12 +2,12 @@ import React, { createContext, useState } from 'react'
 
 interface GlobalContextType {
   currentPage: string
-  setCurrentPage: (route: string) => void
+  setCurrentPageRoute: (route?: string) => void
 }
 
 const contextInitialState: GlobalContextType = {
   currentPage: 'sports',
-  setCurrentPage: () => {}
+  setCurrentPageRoute: () => {}
 }
 
 const GlobalContext = createContext<GlobalContextType>(contextInitialState)
@@ -21,8 +21,12 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
     contextInitialState.currentPage
   )
 
+  const setCurrentPageRoute = (route: string) => {
+    setCurrentPage(route)
+  }
+
   return (
-    <GlobalContext.Provider value={{ currentPage, setCurrentPage }}>
+    <GlobalContext.Provider value={{ currentPage, setCurrentPageRoute }}>
       {children}
     </GlobalContext.Provider>
   )
