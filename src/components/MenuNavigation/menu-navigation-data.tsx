@@ -13,6 +13,18 @@ const menuNavigations: NavigationsType[] = [
   {
     title: 'Movies',
     icon: <Home />
+  },
+  {
+    title: 'Series',
+    icon: <Home />
+  },
+  {
+    title: 'Channels',
+    icon: <Home />
+  },
+  {
+    title: 'Settings',
+    icon: <Home />
   }
 ]
 

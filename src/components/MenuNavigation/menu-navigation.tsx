@@ -7,15 +7,24 @@ import {
   MenuTitle
 } from './menu-navigation.styles'
 import { menuNavigations, NavigationsType } from './menu-navigation-data'
-import { useContext } from 'react'
+import { useCallback, useContext, useMemo } from 'react'
 import { GlobalContext } from 'context/gloabl.context'
+import { useRouter } from 'next/router'
+import React from 'react'
 
 const MenuNavigation = () => {
-  const { setCurrentPageRoute, currentPage } = useContext(GlobalContext)
+  const router = useRouter()
 
   const navigateTo = (route: string) => {
-    setCurrentPageRoute(route.toLowerCase())
+    router.push(`/${route.toLowerCase()}`)
   }
+
+  const checkRoute = () =>
+    useMemo(() => {
+      const title = router.pathname.replace('/', '')
+      console.log(title)
+      return title
+    }, [router.pathname])
 
   return (
     <MenuNavigationContainer>
@@ -27,7 +36,7 @@ const MenuNavigation = () => {
         {menuNavigations.map((item: NavigationsType) => (
           <MenuItem
             onClick={() => navigateTo(item.title)}
-            isActive={currentPage === item.title.toLowerCase()}
+            isActive={checkRoute() === item.title.toLowerCase()}
             key={item.title}
           >
             {item.icon} {item.title}

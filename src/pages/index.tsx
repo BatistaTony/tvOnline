@@ -14,19 +14,23 @@ const pages = [
 ]
 
 const Page = () => {
-  const { currentPage } = useContext(GlobalContext)
+  // const { currentPage } = useContext(GlobalContext)
 
-  const showCurrentPage = (): React.ReactNode => {
-    const page = pages.find(page => page.title === currentPage)
+  // const showCurrentPage = (): React.ReactNode => {
+  //   const page = pages.find(page => page.title === currentPage)
 
-    if (page) {
-      return page.content
-    } else {
-      return <h1>404 no found</h1>
-    }
-  }
+  //   if (page) {
+  //     return page.content
+  //   } else {
+  //     return <h1>404 no found</h1>
+  //   }
+  // }
 
-  return <CustomLayout>{showCurrentPage()}</CustomLayout>
+  return (
+    <CustomLayout title="Sports">
+      <h1>home page</h1>
+    </CustomLayout>
+  )
 }
 
 export default Page
